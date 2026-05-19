@@ -1,0 +1,31 @@
+{
+  "name": "managed-service-skeleton-api",
+  "version": "1.0.0",
+  "description": "Small TypeScript/Node.js lab simulating a managed service backend skeleton.",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "keywords": [
+    "typescript",
+    "nodejs",
+    "express",
+    "docker",
+    "cloud-platform",
+    "managed-services"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.9.0",
+    "tsx": "^4.22.2",
+    "typescript": "^6.0.3"
+  }
+}
