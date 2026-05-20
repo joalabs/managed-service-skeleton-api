@@ -1,0 +1,20 @@
+# Do not copy local dependencies into the Docker image.
+# The image installs its own dependencies with npm ci.
+node_modules
+
+# Do not copy local build output.
+# The Dockerfile builds the app inside the container.
+dist
+
+# Do not copy Git history into the Docker image.
+# It is not needed to run the application.
+.git
+
+# Do not copy local environment variables.
+# Secrets/config should be provided at runtime, not baked into the image.
+.env
+.env.example
+
+# Optional:
+# The README is useful for humans but not needed inside the running container.
+README.md

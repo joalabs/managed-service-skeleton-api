@@ -23,3 +23,6 @@ jspm_packages/
 .env
 .env.*
 !.env.example
+
+# JavaScript output
+dist
