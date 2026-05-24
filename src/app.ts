@@ -5,6 +5,7 @@
 */
 
 import express, { Request, Response } from "express";
+import { config } from "./config.js"
 
 export const app = express();
 
@@ -12,10 +13,22 @@ export const app = express();
 app.use(express.json());
 
 // GET /health
-// This endpoint checks if the API process is alive and responding.
+// This endpoint checks if the API proccess is alive and responding
 app.get("/health", (_req: Request, res: Response) => {
   res.status(200).json({
     status: "ok",
-    service: "managed-service-skeleton-api"
+    service: config.appName
+  });
+});
+
+// GET /ready
+// This endpoint checks if the API proccess is ready to receive traffic
+app.get("/ready", (_req: Request, res: Response) => {
+  res.status(200).json({
+    status: "ok",
+    service: config.appName,
+    checks: {
+      configuration: "ok"
+    }
   });
 });
