@@ -13,8 +13,15 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Checkout repository
-              uses: actions/checkout@v4
+            #- name: Checkout repository
+            #  uses: actions/checkout@v4
+
+            - name: Manual checkout without GitHub token
+              run: |
+                git init
+                git remote add origin https://github.com/${{ github.repository }}.git
+                git fetch --depth=1 origin ${{ github.sha }}
+                git checkout FETCH_HEAD
 
             - name: Set up Node.js
               uses: actions/setup-node@v6
